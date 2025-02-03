@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Anthony Malek
+- **Dot Number**: malek.36
+- **Due Date**: 2/4 @ 1:50 PM EST
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,23 +98,16 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+My personal hobbies include reading, writing, making music, and working on programming projects. On computer science particularly, I'm more interested in work dealing with data and algorithms than things like frontend web development, though I am interested in that too and am not very picky. In my career, I would love to eventually do work that deals heavily with math and the manipulation of information towards an endgoal. I find abstract math very interesting and engaging (I've really enjoyed my foundations course so far).
+In general, I find I'm interested in the creation and analysis of systems in many forms. For example, even for something that seems a lot "freer" and unsystematic like writing, I think I enjoy how you have to pay a lot of attention to the way metaphorical imagery, rhythmic flows, and particular choices of syntax combine and contrast in very complex ways to create some overall impression. A popular school of thought for the analysis of texts was  structuralism, but since thinkers like Deleuze and Guattari have shared their conceptions of Schizoanalysis and desire flows, Manuel de Landa has reconceptualized history as a plane of nonlinear dynamics "A Thousand Years of Nonlinear History", Marx's materialist ideas of labor have been developed to apply to even more areas of philosophy, and engineering has just developed as a whole, I think even writing and philosophical texts have been starting to become understood as something less static as a structure and more like a system. I love philosophers who get ambitious and develope a whole new framework of metaphysical understanding, like Spinoza with his Ethics. It's a new system to analyze. I spoke against Structuralism, but in a bit glib of a way. I like structures and what it brings to things as well.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -131,8 +116,6 @@ etc. Make of this whatever seems interesting to you, and keep in mind that
 you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -200,49 +183,84 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Logic Gate
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component models a logic gate and its interactions with other logic gates, with the possibility of connecting multiple gates.
+      The intent of the design is to keep the kernel relatively contained to the simple
+      individual behavior of one logic gate and its basic connection to other gates.
+      The secondary methods would then contain more complex interactions and information
+      about the state of the logic gate relative to the other gates it is connected to.
+      The gates would use '1' and '0'.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+      'void disconnect()': Disconnects 'this' from its inputs
+      'void connect(LogicGate n)': Connects 'this' to the output of 'n'
+      'void connect(LogicGate n, LogicGate m)': Connects 'this' to the outputs of 'n' and 'm'
+      'int value()': Returns the immediate output value of 'this'.
+      'void changeGate(logicGate n)': Changes the gate type of 'this' to 'n'.
+      'String gateType()': Returns the type of gate of 'this', ex: "AND"
+      'logicGate[] connections()': Returns an array of the logicGates that feed into the input of 'this'.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - 'int gateDepth()': Reports the depth of 'this' in its chain
+      'int totalValue()': Reports the output boolean of the full chain 'this' is a member of.
+      'void negateChain()': Turns the chain of logic gates into its negation
+
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - This component would be mutable. All OSU components have to be mutable to inherit from Standard, and multiple methods, like "negateChain()" and "changeGate(logicGate n), change the value of the variable.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - The component might rely on an internal class to determine the way its logic
+        gates operate, but I'm not sure.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Can you implement your secondary methods using your kernel methods?
-      Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - It might use a constant set to store valid constructors.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+    - Can you implement your secondary methods using your kernel methods?
+      Answer, explain, and give at least one example
+      -Yes, 'connections()' allows us to access other logic gates in the chain
+       and 'value()' allows us to find the value of gates, meaning we could implement 'totalValue()'
+       with our kernel methods. The gateDepth could be counted and remember internally
+       by the logic gates, and connections could work forwards from the gates with
+       the lowest gate depth to the highest. I do imagine a lot of this
+       theoretical implementation would be changed if I went with trying to make this.
+
+- Component Design #2: Music Playlist
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this component is to model a musical playlist. This would
+      store the minimum values corresponding to music to theoretically be accessed
+      by another component and put to use in a working music player, or just work
+      as a callable and functional lightweight queue of songs.
+
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - 'void add(Map song)': adds 'song', a song name and corresponding relevant information, to 'this'
+    - 'Map dequeue()': removes and returns the song at the front of the queue
+    - 'Map front()': returns the song at the front of the queue of 'this'
+
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - 'void add(Playlist n)': appends 'n' to 'this'.
+    - 'void removeSong(String songName)': removes the map corresponding to key 'songName' from the queue of 'this'.
+    - 'void shuffle()': randomly shuffles 'this'
+    - 'String displayPlaylist()': returns a string of all the songs in 'this' and relevant information
+
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, it would inherit from Standard, and methods like 'add' directly modify its value.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No, no internal classes would be necessary.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No, I don't forsee why it would need any. No calculations are really done,
+        and most of the methods just involve the moving of data structures.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the kernel methods provide the necessary abilities necessary for the secondary methods.
+      For example, 'removeSong()' could dequeue from 'this' and add it to a temp queue
+      with 'add()' until it found the song it was trying to remove and just leave it out.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: Shopping Cart
   - **Description**:
     - <!-- TODO: describe your component then delete this comment -->
   - **Kernel Methods**:
@@ -255,7 +273,7 @@ will likely refine your design to make your implementation easier to use.
       - <!-- TODO: provide an argument then delete this comment -->
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
       - <!-- TODO: provide an argument then delete this comment -->
