@@ -262,24 +262,38 @@ will likely refine your design to make your implementation easier to use.
 
 - Component Design #3: Shopping Cart
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this component is to model a shopping cart and the way it holds
+      different items. The shopping cart would hold an internal setThe kernel methods
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - 'void add(Map item)': Adds 'item' to 'this'. 'item' would store its cash value in an internal set of 'this', separate
+    - from the list of actual items in the carts, and another set in 'this' would store the number of 'item' this in the cart.
+    - 'NaturalNumber amount(String itemName)': Returns the number of an item the cart has
+    - 'Map remove(String itemName)': Removes and returns one instance of map corresponding to 'itemName'
+    - 'NaturalNumber cost(String itemName)': Returns the stored cost of an item
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - 'NaturalNumber total()': Returns the total cost the the items in the shopping cart
+    - 'String itemsInCart()': Returns a string of an itemized list of the shopping cart items with relevant information
+    - 'void add(Map item, NaturalNumber amount)': Adds the amount of 'amount' of 'item' to 'this'
+    - 'Map remove(Map item, NaturalNumber amount)': Removes the amount of 'amount' of 'item' from 'this'
+    - 'void add(String itemName, NaturalNumber amount)': Adds the amount of 'amount' of 'item' corresponding to 'itemName' to 'this'
+    - 'Map remove(String itemName, NaturalNumber amount)': Removes the amount of 'amount' of 'item' corresponding to 'itemName' from 'this'
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, multiple methods access and modify its value. It also is an OSU component that inhereits from Standard.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - No
+      - Yes.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No, I don't forsee it needing any enums or constants.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the kernel methods provide the necessary capabilities to implement the secondary methods.
+        The basic functionality of adding and removig items from the shopping cart makes up the main functionality.
+        For example, 'total()' could be implemented by getting the costs with 'cost(String itemName)' and amounts with
+        'amount(String itemName)' and multiplying and adding them to return a total cost of all the
+        items in the cart.
 
 ## Post-Assignment
 
@@ -287,8 +301,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -327,8 +339,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
-
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
 this [Markdown to PDF guide][markdown-to-pdf-guide]. However, PDFs should be
@@ -337,11 +347,7 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
-
 ### Peer Review
-
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
@@ -367,8 +373,6 @@ PDF to read this rubric as a table).
 If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
-
-<!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [example-components]: https://therenegadecoder.com/code/the-never-ending-list-of-small-programming-project-ideas/
 [markdown-to-pdf-guide]: https://therenegadecoder.com/blog/how-to-convert-markdown-to-a-pdf-3-quick-solutions/
