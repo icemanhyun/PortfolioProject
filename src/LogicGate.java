@@ -153,7 +153,7 @@ public class LogicGate {
      *
      * @param gateToCopy
      */
-    public void changegateName(LogicGate gateToCopy) {
+    public void changeGateName(LogicGate gateToCopy) {
         this.truthTable = gateToCopy.truthTable;
         this.gateName = gateToCopy.gateName;
     }
