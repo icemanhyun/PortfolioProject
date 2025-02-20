@@ -153,7 +153,7 @@ public class LogicGate {
      *
      * @param gateToCopy
      */
-    public void changeGateName(LogicGate gateToCopy) {
+    public void changeGate(LogicGate gateToCopy) {
         this.truthTable = gateToCopy.truthTable;
         this.gateName = gateToCopy.gateName;
     }
@@ -163,7 +163,7 @@ public class LogicGate {
      * @param inputTruthTable
      * @param gateNameString
      */
-    public void changegateName(Map<String, String> inputTruthTable,
+    public void changeGate(Map<String, String> inputTruthTable,
             String gateNameString) {
         this.truthTable = inputTruthTable;
         this.gateName = gateNameString;
