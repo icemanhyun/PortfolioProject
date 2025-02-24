@@ -42,6 +42,11 @@ public class LogicGate {
     private boolean connectedUp;
 
     /**
+     * Heads of the logic gate. This is an arraylist, because there can be
+     * multiple.
+     */
+
+    /**
      * The height of the logic gate chain.
      */
     private int height;

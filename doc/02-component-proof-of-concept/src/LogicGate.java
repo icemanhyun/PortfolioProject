@@ -33,6 +33,13 @@ public class LogicGate {
     private LogicGate secondInput;
 
     /**
+     * The head of the chain this is connected to. A gate can be connected to
+     * multiple top parts of a chain, maybe could track all of them, or track
+     * the highest chain it's a member of?
+     */
+    private LogicGate headOfChain;
+
+    /**
      * Whether this is connected to two inputs.
      */
     private boolean connectedUp;
@@ -66,6 +73,7 @@ public class LogicGate {
         this.gateType = new String();
         this.firstInput = null;
         this.secondInput = null;
+        this.headOfChain = this;
         this.height = 0;
         this.size = 0;
     }
