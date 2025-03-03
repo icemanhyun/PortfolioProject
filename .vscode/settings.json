@@ -29,11 +29,10 @@
         "doc",
         "src",
         "test",
-        "bin"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "c:\\Users\\icema\\OneDrive\\Documents\\GitHub\\PortfolioProject\\lib\\components (1).jar"
+        "lib/**/*.jar"
     ],
     "java.saveActions.cleanup": true,
     "java.cleanup.actions": [
