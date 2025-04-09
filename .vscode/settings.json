@@ -26,12 +26,13 @@
     "java.format.settings.url": ".vscode/osu-cse-formatter.xml",
     "java.format.settings.profile": "OSU CSE",
     "java.project.sourcePaths": [
+        "doc",
         "src",
         "test"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "c:\\Users\\icema\\OneDrive\\Documents\\GitHub\\PortfolioProject\\lib\\components (1).jar"
     ],
     "java.saveActions.cleanup": true,
     "java.cleanup.actions": [
